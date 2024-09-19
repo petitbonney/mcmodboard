@@ -1,0 +1,32 @@
+services:
+  mc:
+    image: itzg/minecraft-server
+    ports:
+      - "25565:25565"
+    volumes:
+      # - ./data:/data
+      - .shared-volume:/data
+    environment:
+      # General
+      INIT_MEMORY: 8G
+      MAX_MEMORY: 16G
+      ENABLE_ROLLING_LOGS: true
+      USE_AIKAR_FLAGS: true
+      # Server
+      TYPE: VANILLA
+      EULA: true
+      VERSION: "1.20"
+      DIFFICULTY: hard
+      ICON: https://cdn-icons-png.flaticon.com/512/1795/1795412.png
+      MAX_PLAYERS: 20
+      FORCE_GAMEMODE: true
+      HARDCORE: false
+      SNOOPER_ENABLED: false
+      MODE: survival
+      PLAYER_IDLE_TIMEOUT: 10 # minutes
+      # Whitelist
+      ENABLE_WHITELIST: true
+      WHITELIST: petitbonney,mrbeast
+      OVERRIDE_WHITELIST: true
+      # Auto-Pause
+      ENABLE_AUTOPAUSE: true
