@@ -3,18 +3,15 @@ services:
     image: itzg/minecraft-server
     ports:
       - "25565:25565"
-    volumes:
-      # - ./data:/data
-      - .shared-volume:/data
     environment:
+      EULA: true
       # General
       INIT_MEMORY: 8G
       MAX_MEMORY: 16G
       ENABLE_ROLLING_LOGS: true
       USE_AIKAR_FLAGS: true
       # Server
-      TYPE: VANILLA
-      EULA: true
+      TYPE: FABRIC
       VERSION: "1.20"
       DIFFICULTY: hard
       ICON: https://cdn-icons-png.flaticon.com/512/1795/1795412.png
@@ -30,3 +27,6 @@ services:
       OVERRIDE_WHITELIST: true
       # Auto-Pause
       ENABLE_AUTOPAUSE: true
+
+      # Mods
+      MODRINTH_PROJECTS: lithium
