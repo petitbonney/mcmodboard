@@ -3,7 +3,5 @@ services:
   api:
     build:
       context: ./api
-      no_cache: true
-    restart: always
     ports:
       - "8000:8000"
