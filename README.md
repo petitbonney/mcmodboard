@@ -2,10 +2,16 @@
 
 API and Web UI to manage modded Minecraft servers
 
-## How to run the project
+## Running the project
 
 ```bash
-docker compose up
+docker compose up -d
+```
+
+## Stopping the project
+
+```bash
+docker compose down
 ```
 
 ## TODO
